@@ -71,6 +71,12 @@ variants = [
     [   # variant 6
         'os-rocky-9',
         'opt_level-optdebug',
+        'refplat-vfx2026.0',
+        'gcc-14.2.x'
+    ],
+    [   # variant 7
+        'os-rocky-9',
+        'opt_level-optdebug',
         'refplat-vfx2022.0',
         'gcc-9.3.x.1'
     ],
@@ -84,14 +90,14 @@ for i, variant in enumerate(variants):
     variant.insert(0, '.mcrt_denoise_variant-%d' % i)
 
 requires = [
-  'cuda-12.1.0.x',
+  'cuda-12.9.1.x',
   'openimagedenoise-2.3.3.x',
   'optix-7.6.0.x',
   'scene_rdl2-16.2'
 ]
 
 private_build_requires = [
-    'cmake_modules-1.1',
+    'cmake_modules-2.0',
     'cppunit',
 ]
 
